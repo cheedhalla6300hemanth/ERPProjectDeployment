@@ -1,0 +1,159 @@
+@charset "UTF-8";
+ 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Ensure the table stays within the main content area */
+        .table-container {
+            margin-left: 250px; /* Adjust this based on your sidebar width */
+            padding: 0 20px;
+            overflow-x: auto; /* Add horizontal scroll for smaller screens */
+        }
+
+        /* Reduce the size of the table */
+        table {
+            width: 90%; /* Reduce table width */
+            max-width: 1200px; /* Set max width to ensure it's smaller */
+            font-size: 0.8rem; /* Smaller font size to fit more data */
+            border-collapse: collapse;
+            background-color: #fff;
+            margin: 20px auto; /* Center table with margin */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        ul
+        {
+        list-style-type: none;
+        padding-top:5px;
+        }
+        li{
+        padding:2px;
+        }
+        
+        table, th, td {
+            border: 1px solid #333;
+        }
+
+        th, td {
+            padding: 8px; /* Decrease padding for smaller cells */
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        /* Add hover effect to rows */
+        tr:hover {
+            background-color: #e0f7fa;
+            transform: scale(1.02);
+        }
+
+        /* Animation when page loads */
+        table {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Additional animations for rows */
+        tr {
+            opacity: 0;
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        tr:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        tr:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .table-container {
+                margin-left: 0;
+            }
+
+            table {
+                width: 100%; /* Full width for smaller screens */
+                font-size: 0.7rem; /* Even smaller font size for mobile */
+            }
+
+            th, td {
+                padding: 6px;
+            }
+        }
+  /* Style for the Accept and Reject buttons */
+.table-container a {
+    text-decoration: none;
+    padding: 5px 10px; /* Reduced padding for smaller buttons */
+    border-radius: 4px;
+    margin-right: 8px; /* Space between buttons */
+    font-size: 12px; /* Reduced font size */
+    font-weight: bold;
+    display: inline-block; /* Ensures buttons are aligned side by side */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Accept button style */
+.table-container a[href*='Accepted'] {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #28a745;
+}
+
+.table-container a[href*='Accepted']:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #fff;
+}
+
+/* Reject button style */
+.table-container a[href*='Rejected'] {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+.table-container a[href*='Rejected']:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: #fff;
+}
+  
